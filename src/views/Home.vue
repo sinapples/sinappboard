@@ -1,30 +1,39 @@
 <template>
-  <div>
-    <!-- <h1 class="home-page-title">{{ appTitle }}</h1> -->
-    <v-parallax
-      height="700"
-      src="https://images.unsplash.com/photo-1521342475957-8db764a86913?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2102&q=80"
-    >
-      <div class="page-wrapper">
-        <v-card color="taro" rounded="xl">
-          <v-card-title>
-            <h1>Café Boba</h1>
-          </v-card-title>
-        </v-card>
-      </div>
-    </v-parallax>
+  <span>
+    <v-card>
+      <v-row no-gutters height="100%">
+        <v-col cols="6">
+          <v-btn height="600" width="600px" color="taro" @click="leftCount++">
+            <h1 style="font-size: 700px;">{{ leftCount }}</h1>
+          </v-btn>
+        </v-col>
+        <v-col cols="6">
+          <v-btn
+            height="600px"
+            width="600px"
+            color="matcha"
+            @click="rightCount++"
+          >
+            <h1 style="font-size: 700px;">{{ rightCount }}</h1>
+          </v-btn>
+        </v-col>
+      </v-row>
 
-    <!-- About this Community -->
-    <v-sheet color="matcha">
-      <v-container class="text-center">
-        <div class="my-8">
-          <h2 class="display-2 font-weight-bold mb-3 text-center">
-            A place to work, socialize, and learn
-          </h2>
-        </div>
-      </v-container>
-    </v-sheet>
-  </div>
+      <v-card-actions>
+        <v-btn x-large class="px-16 py-12" color="taro" @click="leftCount--">
+          remove 1
+        </v-btn>
+        <v-spacer />
+        <v-btn x-large class="px-16 py-12" color="thai" @click="reset()">
+          reset
+        </v-btn>
+        <v-spacer />
+        <v-btn x-large class="px-16 py-12" color="matcha" @click="rightCount--">
+          remove 1
+        </v-btn>
+      </v-card-actions>
+    </v-card>
+  </span>
 </template>
 
 <script>
@@ -33,7 +42,10 @@ import { mapState } from 'vuex'
 export default {
   components: {},
   data() {
-    return {}
+    return {
+      leftCount: 0,
+      rightCount: 0
+    }
   },
   head() {
     return {
@@ -43,13 +55,21 @@ export default {
       meta: [
         {
           name: 'description',
-          content: `Fill out the Summer Survey please!`,
+          content: `Score app!`,
           id: 'desc'
         }
       ]
     }
   },
-  computed: mapState('app', ['appTitle'])
+
+  computed: mapState('app', ['appTitle']),
+
+  methods: {
+    reset() {
+      this.leftCount = 0
+      this.rightCount = 0
+    }
+  }
 }
 </script>
 
