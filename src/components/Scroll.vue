@@ -10,7 +10,7 @@
           x="0px"
           y="0px"
           viewBox="0 0 54.9 91"
-          style="enable-background:new 0 0 54.9 91;"
+          style="enable-background: new 0 0 54.9 91"
           xml:space="preserve"
         >
           <path
@@ -34,7 +34,7 @@
           x="0px"
           y="0px"
           viewBox="0 0 27.4 91"
-          style="enable-background:new 0 0 27.4 91;"
+          style="enable-background: new 0 0 27.4 91"
           xml:space="preserve"
         >
           <path
@@ -56,7 +56,7 @@
           x="0px"
           y="0px"
           viewBox="0 0 27.4 91"
-          style="enable-background:new 0 0 27.4 91;"
+          style="enable-background: new 0 0 27.4 91"
           xml:space="preserve"
         >
           <path
@@ -75,8 +75,8 @@
 <script>
 export default {
   props: {
-    msg: String
-  }
+    msg: String,
+  },
 }
 </script>
 

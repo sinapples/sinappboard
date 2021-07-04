@@ -30,7 +30,7 @@ export default {
           text: 'Name',
           align: 'start',
           sortable: false,
-          value: 'name'
+          value: 'name',
         },
         { text: 'Email', value: 'email' },
         { text: 'Discord', value: 'discord' },
@@ -41,9 +41,9 @@ export default {
         { text: 'Time', value: 'availablityTime' },
 
         { text: 'Interest', value: 'interest' },
-        { text: 'Summer Project', value: 'selectedInterestSummer' }
+        { text: 'Summer Project', value: 'selectedInterestSummer' },
       ],
-      products: []
+      products: [],
     }
   },
 
@@ -61,8 +61,8 @@ export default {
     async getData() {
       const db = new SummerFormDB()
       this.products = await db.readAll()
-    }
-  }
+    },
+  },
 }
 </script>
 

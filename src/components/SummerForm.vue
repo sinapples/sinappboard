@@ -1,9 +1,7 @@
 <template>
   <div>
     <v-card>
-      <v-card-title>
-        Availablity Survey
-      </v-card-title>
+      <v-card-title> Availablity Survey </v-card-title>
       <v-card-subtitle>Interested in helping me make Pockets?</v-card-subtitle>
       <v-card-text>
         <v-form ref="form" v-model="valid">
@@ -11,7 +9,7 @@
             v-model="name"
             class="required"
             label="Name"
-            :rules="[v => !!v || 'Name is required']"
+            :rules="[(v) => !!v || 'Name is required']"
             dense
           ></v-text-field>
           <v-text-field
@@ -33,7 +31,7 @@
           <v-combobox
             v-model="availablity"
             :items="availablityList"
-            :rules="[v => v.length > 0 || 'Select some availablities']"
+            :rules="[(v) => v.length > 0 || 'Select some availablities']"
             persistent-hint
             color="primary"
             chips
@@ -43,7 +41,7 @@
           <v-combobox
             v-model="availablityTime"
             :items="availablityTimeList"
-            :rules="[v => v.length > 0 || 'Select some availabilities']"
+            :rules="[(v) => v.length > 0 || 'Select some availabilities']"
             persistent-hint
             color="primary"
             chips
@@ -53,7 +51,7 @@
           <v-combobox
             v-model="selectedInterest"
             :items="interest"
-            :rules="[v => v.length > 0 || 'Select some interest']"
+            :rules="[(v) => v.length > 0 || 'Select some interest']"
             persistent-hint
             hint="Create your own by typing"
             color="primary"
@@ -65,7 +63,7 @@
           <v-combobox
             v-model="selectedInterestSummer"
             :items="interestSummer"
-            :rules="[v => v.length > 0 || 'Select an option']"
+            :rules="[(v) => v.length > 0 || 'Select an option']"
             persistent-hint
             color="primary"
             chips
@@ -78,7 +76,7 @@
             row
             label="Experience level"
             color="matcha"
-            :rules="[v => v !== '' || 'Select experance level']"
+            :rules="[(v) => v !== '' || 'Select experance level']"
           >
             <!-- :error="name !== '' && !!!experienceType" -->
             <v-radio label="New to Code/No experience" value="new"></v-radio>
@@ -141,15 +139,15 @@ export default {
       experienceType: '',
       name: '',
       nameRules: [
-        v => !!v || 'Name is required',
-        v => (v && v.length <= 10) || 'Name must be less than 10 characters'
+        (v) => !!v || 'Name is required',
+        (v) => (v && v.length <= 10) || 'Name must be less than 10 characters',
       ],
       loading: false,
       discord: '',
       email: '',
       emailRules: [
-        v => !!v || 'E-mail is required',
-        v => /.+@.+\..+/.test(v) || 'E-mail must be valid'
+        (v) => !!v || 'E-mail is required',
+        (v) => /.+@.+\..+/.test(v) || 'E-mail must be valid',
       ],
 
       experience: '',
@@ -169,7 +167,7 @@ export default {
         'Rust',
         'LeetCode',
         'K-Pop',
-        'Games'
+        'Games',
       ],
       selectedInterest: [],
       interestSummer: [
@@ -180,7 +178,7 @@ export default {
         'Interested in learning new technologies',
         'Interested in helping out/answering questions',
         'Interested and want to teach/talk about something',
-        'Not interested '
+        'Not interested ',
       ],
       selectedInterestSummer: [],
       availablity: [],
@@ -195,7 +193,7 @@ export default {
         'Saturday Afternoon',
         'Sunday Afternoon',
         'Anytime with notice',
-        'None'
+        'None',
       ],
       availablityTime: [],
       availablityTimeList: [
@@ -207,8 +205,8 @@ export default {
         '11 PM',
 
         'Anytime with notice',
-        'None'
-      ]
+        'None',
+      ],
     }
   },
   computed: {
@@ -237,9 +235,9 @@ export default {
         isTA: this.isTA,
         availablity: this.availablity,
         availablityTime: this.availablityTime,
-        selectedInterestSummer: this.selectedInterestSummer
+        selectedInterestSummer: this.selectedInterestSummer,
       }
-    }
+    },
   },
   methods: {
     async submit() {
@@ -258,8 +256,8 @@ export default {
         this.loading = false
         this.error = true
       }
-    }
-  }
+    },
+  },
 }
 </script>
 

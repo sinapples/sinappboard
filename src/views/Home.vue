@@ -8,9 +8,7 @@
       <div class="page-wrapper">
         <v-card color="taro" rounded="xl">
           <v-card-title>
-            <h1>
-              Café Boba
-            </h1>
+            <h1>Café Boba</h1>
           </v-card-title>
         </v-card>
         <br />
@@ -28,7 +26,7 @@
 
     <!-- About this Community -->
     <v-sheet color="matcha">
-      <v-container class="text-center  ">
+      <v-container class="text-center">
         <div class="my-8">
           <h2 class="display-2 font-weight-bold mb-3 text-center">
             A place to work, socialize, and learn
@@ -41,7 +39,13 @@
           </v-responsive>
 
           <v-responsive
-            class="mx-auto title font-weight-light mb-8 text-center text-justify"
+            class="
+              mx-auto
+              title
+              font-weight-light
+              mb-8
+              text-center text-justify
+            "
             max-width="720"
           >
             <div class="px-4">
@@ -76,7 +80,7 @@
 
     <!-- Events -->
     <v-sheet color="thai  ">
-      <v-container class="text-center  ">
+      <v-container class="text-center">
         <div class="my-8">
           <h2 class="display-2 font-weight-bold mb-3 text-center">
             Tech Talks and Projects
@@ -89,25 +93,27 @@
           </v-responsive>
 
           <v-responsive
-            class="mx-auto title font-weight-light mb-8 text-center text-justify"
+            class="
+              mx-auto
+              title
+              font-weight-light
+              mb-8
+              text-center text-justify
+            "
             max-width="720"
           >
             <div class="px-4">
-              <h4 class="  mb-4 text-center">
+              <h4 class="mb-4 text-center">
                 Join us for bimonthly tech talks on a variety of topics!
               </h4>
 
-              <h5>
-                Learn new technologies:
-              </h5>
+              <h5>Learn new technologies:</h5>
               <p class="subtitle-1 pl-4">
                 ● Developing voice apps for Google Assistant and Alexa <br />
                 ● Introduction to Django <br />
                 ● What is Service Now and how to get started <br />
               </p>
-              <h5>
-                Career Chats:
-              </h5>
+              <h5>Career Chats:</h5>
               <p class="subtitle-1 pl-4">
                 ● Interview Prep and Resume Review <br />
                 ● Mock inteviews and LeetCode Practice<br />
@@ -125,11 +131,9 @@
 
     <!-- Projects -->
     <v-sheet color="taro">
-      <v-container class="text-center  ">
+      <v-container class="text-center">
         <div class="my-8">
-          <h2 class="display-2 font-weight-bold mb-3 text-center">
-            Projects
-          </h2>
+          <h2 class="display-2 font-weight-bold mb-3 text-center">Projects</h2>
 
           <v-responsive class="mx-auto mb-8" width="56">
             <v-divider class="mb-1"></v-divider>
@@ -138,17 +142,23 @@
           </v-responsive>
 
           <v-responsive
-            class="mx-auto title font-weight-light mb-8 text-center text-justify"
+            class="
+              mx-auto
+              title
+              font-weight-light
+              mb-8
+              text-center text-justify
+            "
             max-width="720"
           >
             <div class="px-4">
-              <h4 class="text-center  mb-3 ">
+              <h4 class="text-center mb-3">
                 Work and collaborate on projects! <br />
               </h4>
 
               <h5>Here are some project people are working on: <br /></h5>
 
-              <p class="subtitle-1  pl-4">
+              <p class="subtitle-1 pl-4">
                 ● Cafe Boba (This website)<br />
                 ● Learn Japanese video builder <br />
                 ● Online marketplace for virtual events <br />
@@ -156,9 +166,7 @@
                 ● Using machine learning to predict stock prices<br />
               </p>
               <h5>Not sure what to build? <br /></h5>
-              <p class="body-1 mb-0">
-                We have guided live sessions
-              </p>
+              <p class="body-1 mb-0">We have guided live sessions</p>
 
               <div class="subtitle-1 pl-4">
                 ● Create a website to view prices of cypto using an API<br />
@@ -175,7 +183,7 @@
     </v-sheet>
     <!-- Summer form -->
     <v-sheet color="primary">
-      <v-responsive class="mx-auto title font-weight-light  " max-width="720">
+      <v-responsive class="mx-auto title font-weight-light" max-width="720">
         <div class="my-8">
           <h3 class="display-2 font-weight-bold mb-3 text-center">
             Summer Projects
@@ -187,13 +195,17 @@
           </v-responsive>
 
           <v-responsive
-            class="mx-auto title font-weight-light mb-8 text-center text-justify"
+            class="
+              mx-auto
+              title
+              font-weight-light
+              mb-8
+              text-center text-justify
+            "
             max-width="720"
           >
             <div class="px-4">
-              <p>
-                Learn something new this summer!
-              </p>
+              <p>Learn something new this summer!</p>
               <p>
                 Get motivated and work on a project. We can motivate and keep
                 each other accountable for working on personal projects,
@@ -237,26 +249,12 @@ import Scroll from '@/components/Scroll'
 
 export default {
   components: { SummerForm, Scroll },
-  head() {
-    return {
-      title: {
-        inner: 'Home'
-      },
-      meta: [
-        {
-          name: 'description',
-          content: `Fill out the Summer Survey please!`,
-          id: 'desc'
-        }
-      ]
-    }
-  },
   data() {
     return {
       name: '',
       nameRules: [
-        v => !!v || 'Name is required',
-        v => (v && v.length <= 10) || 'Name must be less than 10 characters'
+        (v) => !!v || 'Name is required',
+        (v) => (v && v.length <= 10) || 'Name must be less than 10 characters',
       ],
       discord: '',
       experience: '',
@@ -272,12 +270,26 @@ export default {
         'Rust',
         'LeetCode',
         'Interview Prep',
-        'Career Advice'
+        'Career Advice',
       ],
-      selectedInterest: []
+      selectedInterest: [],
     }
   },
-  computed: mapState('app', ['appTitle'])
+  head() {
+    return {
+      title: {
+        inner: 'Home',
+      },
+      meta: [
+        {
+          name: 'description',
+          content: `Fill out the Summer Survey please!`,
+          id: 'desc',
+        },
+      ],
+    }
+  },
+  computed: mapState('app', ['appTitle']),
 }
 </script>
 

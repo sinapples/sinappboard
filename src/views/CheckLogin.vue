@@ -1,7 +1,5 @@
 <template>
-  <h1 class="loading-title">
-    Loading...
-  </h1>
+  <h1 class="loading-title">Loading...</h1>
 </template>
 
 <script>
@@ -25,9 +23,9 @@ export default {
 
         this.$router.push(redirectUrl)
       },
-      immediate: true
-    }
-  }
+      immediate: true,
+    },
+  },
 }
 </script>
 

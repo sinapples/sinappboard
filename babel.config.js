@@ -1,4 +1,3 @@
 module.exports = {
-  plugins: ['lodash'],
-  presets: [['@vue/app', { useBuiltIns: 'entry' }]]
+  presets: ['@vue/cli-plugin-babel/preset'],
 }

@@ -42,7 +42,7 @@ export default {
 
   data() {
     return {
-      count: 0
+      count: 0,
     }
   },
   computed: {
@@ -63,7 +63,7 @@ export default {
         return 'thai'
       }
       return 'berry'
-    }
+    },
   },
   methods: {
     async logout() {
@@ -71,9 +71,9 @@ export default {
     },
     ...mapActions('app', [
       'closeAddToHomeScreenModalForApple',
-      'serviceWorkerSkipWaiting'
-    ])
-  }
+      'serviceWorkerSkipWaiting',
+    ]),
+  },
 }
 </script>
 

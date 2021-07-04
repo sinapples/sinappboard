@@ -47,5 +47,5 @@ export default {
     await userProductsDb.delete(productId)
     commit('removeProductById', productId)
     commit('removeProductDeletionPending', productId)
-  }
+  },
 }
