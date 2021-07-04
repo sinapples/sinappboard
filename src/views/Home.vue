@@ -4,7 +4,7 @@
       <v-row no-gutters height="100%">
         <v-col cols="6">
           <v-btn height="600" width="600px" color="taro" @click="leftCount++">
-            <h1 style="font-size: 700px;">{{ leftCount }}</h1>
+            <h1 style="font-size: 450px;">{{ leftCount }}</h1>
           </v-btn>
         </v-col>
         <v-col cols="6">
@@ -14,12 +14,12 @@
             color="matcha"
             @click="rightCount++"
           >
-            <h1 style="font-size: 700px;">{{ rightCount }}</h1>
+            <h1 style="font-size: 450px;">{{ rightCount }}</h1>
           </v-btn>
         </v-col>
       </v-row>
 
-      <v-card-actions>
+      <v-card-actions class="pa-0">
         <v-btn x-large class="px-16 py-12" color="taro" @click="leftCount--">
           remove 1
         </v-btn>
