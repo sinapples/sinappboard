@@ -1,15 +1,9 @@
 <template>
   <v-app-bar app color="milk">
     <v-toolbar-title>
-      <router-link v-if="count % 2 === 1" to="/login">
-        <v-icon color="black">mdi-tea</v-icon>
-      </router-link>
+      <v-icon color="black">mdi-tea</v-icon>
 
-      <router-link v-else to="/home">
-        <v-icon color="black">mdi-tea</v-icon>
-      </router-link>
-
-      Cafe Boba
+      {{ appTitle }}
     </v-toolbar-title>
 
     <v-spacer></v-spacer>
@@ -19,21 +13,10 @@
       :refreshing-app="refreshingApp"
       @refresh="serviceWorkerSkipWaiting"
     ></new-content-available-toastr>
-
-    <v-badge
-      v-else
-      :content="count"
-      :value="count"
-      :color="colorCount"
-      class="mr-6"
-    >
-      <v-icon color="black" @click="count++">mdi-chart-bubble</v-icon>
-    </v-badge>
   </v-app-bar>
 </template>
 
 <script>
-import firebase from 'firebase/app'
 import { mapGetters, mapState, mapActions } from 'vuex'
 import NewContentAvailableToastr from '@/components/NewContentAvailableToastr'
 
@@ -41,39 +24,20 @@ export default {
   components: { NewContentAvailableToastr },
 
   data() {
-    return {
-      count: 0,
-    }
+    return {}
   },
   computed: {
     ...mapGetters('app', ['newContentAvailable']),
     ...mapState('app', ['showAddToHomeScreenModalForApple', 'refreshingApp']),
 
-    ...mapGetters('authentication', ['isUserLoggedIn']),
-    ...mapState('authentication', ['user']),
-    ...mapState('app', ['networkOnLine', 'appTitle', 'appShortTitle']),
-    colorCount() {
-      if (this.count % 4 === 0) {
-        return 'matcha'
-      }
-      if (this.count % 3 === 0) {
-        return 'taro'
-      }
-      if (this.count % 2 === 0) {
-        return 'thai'
-      }
-      return 'berry'
-    },
+    ...mapState('app', ['networkOnLine', 'appTitle', 'appShortTitle'])
   },
   methods: {
-    async logout() {
-      await firebase.auth().signOut()
-    },
     ...mapActions('app', [
       'closeAddToHomeScreenModalForApple',
-      'serviceWorkerSkipWaiting',
-    ]),
-  },
+      'serviceWorkerSkipWaiting'
+    ])
+  }
 }
 </script>
 
