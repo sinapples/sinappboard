@@ -1,8 +1,8 @@
 <template>
-  <v-app id="app">
+  <v-app id="app" style="background: #abdae1">
     <!-- <v-app> -->
-    <nav-bar />
-    <v-sheet height="55px" color="primary"> </v-sheet>
+    <!-- <nav-bar /> -->
+    <!-- <v-sheet height="75px" color="primary"> </v-sheet> -->
 
     <!-- <div> -->
 
@@ -23,21 +23,24 @@
   </v-app>
 </template>
 <script>
-import NavBar from '@/components/NavBar'
+// import NavBar from '@/components/NavBar'
 import NewContentAvailableToastr from '@/components/NewContentAvailableToastr'
 // import AppleAddToHomeScreenModal from '@/components/AppleAddToHomeScreenModal'
 import { mapState, mapActions, mapGetters } from 'vuex'
 
 export default {
-  components: { NavBar, NewContentAvailableToastr },
+  components: {
+    NewContentAvailableToastr,
+    //  NavBar
+  },
   computed: {
     ...mapGetters('app', ['newContentAvailable']),
-    ...mapState('app', ['showAddToHomeScreenModalForApple', 'refreshingApp'])
+    ...mapState('app', ['showAddToHomeScreenModalForApple', 'refreshingApp']),
   },
   methods: mapActions('app', [
     'closeAddToHomeScreenModalForApple',
-    'serviceWorkerSkipWaiting'
-  ])
+    'serviceWorkerSkipWaiting',
+  ]),
 }
 </script>
 
